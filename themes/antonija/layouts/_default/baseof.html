@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
+    {{ $style := resources.Get "scss/styles.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" >
+    <title>Antonija Kasum</title>
+</head>
+    
+    <body>
+        <main class="wrapper">
+            <div class="first">
+                {{- partial "header.html" . -}}
+                <a class="first__projects-btn" href="#projects">Check my projects</a>
+            </div>
+            
+            <section class="projects" id="projects">
+            {{- block "main" . }}{{- end }} 
+            <!-- index html -->
+            </section>
+        </main>
+        {{- partial "footer.html" . -}}
+
+        {{ $main := resources.Get "js/main.js" }}
+        {{ $js := slice $main | resources.Concat "js/bundle.js" }}
+
+        <script src="{{ $js.Permalink}}"></script>
+    </body>
+</html>
