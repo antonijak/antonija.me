@@ -215,6 +215,10 @@ body {
                 transition: background-color .5s;
                 -webkit-transition-timing-function: ease;
                 transition-timing-function: ease;
+                margin-bottom: 3rem;
+                @include tablet-s {
+                    margin-bottom: 0;
+                }
                 @include desktop-s {
                     font-size: 1.1rem;
                 }
