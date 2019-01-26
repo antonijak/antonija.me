@@ -10,7 +10,7 @@ let bla;
 let bla2;
 
 function showCopyEmail () {
-    email.style.fontSize = '1.4rem';
+    window.screen.width < 600 ? email.style.fontSize = '1.1rem': email.style.fontSize = '1.4rem';
     email.textContent = "Copy email";
     email.addEventListener("click", copyToClipboard);
     email.addEventListener("mouseout", hideCopyEmail);
@@ -44,7 +44,7 @@ function copyToClipboard () {
         email.style.fontSize = (email.style.fontSize === '1.4rem' ? '1.2rem' : '1.4rem');
     }, 100);
        bla2 = setInterval(function() {clearInterval(bla)
-        email.style.fontSize = '1.4rem';
+        window.screen.width < 600 ? email.style.fontSize = '1.1rem': email.style.fontSize = '1.4rem';
     }, 500);
     
 }
