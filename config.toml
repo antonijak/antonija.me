@@ -3,3 +3,9 @@ language = "en"
 theme = "antonija"
 title = "Antonija Kasum"
 publishDir = "docs"
+googleAnalytics = "UA-133749277-1"
+
+[params]
+  description = "Frontend developer based in Helsinki. I enjoy using Javascript to turn ideas into code."
+  images = ["/favicon/favicon-32x32.png"]
+  title = "Antonija Kasum | Frontend Developer"
