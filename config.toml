@@ -1,7 +1,7 @@
 baseURL = "https://antonijakasum.com/"
 language = "en"
 theme = "antonija"
-title = "Antonija Kasum"
+title = "Antonija Kasum | Frontend Developer"
 publishDir = "docs"
 googleAnalytics = "UA-133749277-1"
 
