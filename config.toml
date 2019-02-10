@@ -2,6 +2,8 @@ baseURL = "https://antonijakasum.com/"
 language = "en"
 theme = "antonija"
 title = "Antonija Kasum | Frontend Developer"
+description = "Frontend developer based in Helsinki. I enjoy using Javascript to turn ideas into code."
+images = ["/img/social-image.jpeg"]
 publishDir = "docs"
 googleAnalytics = "UA-133749277-1"
 
