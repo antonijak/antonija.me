@@ -7,5 +7,5 @@ googleAnalytics = "UA-133749277-1"
 
 [params]
   description = "Frontend developer based in Helsinki. I enjoy using Javascript to turn ideas into code."
-  images = ["/favicon/favicon-32x32.png"]
+  images = ["/img/social-image.jpeg"]
   title = "Antonija Kasum | Frontend Developer"
