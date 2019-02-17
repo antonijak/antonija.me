@@ -587,8 +587,14 @@ body {
                     &__link {
                         text-decoration: none;
                         color: gray;
+
+                        &:hover {
+                            color: $primary;
+                        }
                     }
                 }
+
+
 
             }
 
