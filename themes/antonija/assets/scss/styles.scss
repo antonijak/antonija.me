@@ -546,6 +546,7 @@ body {
             }
             @include tablet-s {
                 padding: 3rem 0;
+                align-items: flex-start;
             }
             @include tablet {
                 width: 70%;
@@ -566,12 +567,31 @@ body {
 
             &__text {
                 font-size: .8rem;
-                text-align: center;
                 padding: 0 1.3rem;
                 @include tablet {
                     font-size: 1rem;
                 }
+                @include tablet-s {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                &__first, &__design, &__last {
+                    text-align: center;
+                    @include tablet-s {
+                        margin-right: 5px;
+                    }
+                }
+
+                &__design {
+                    &__link {
+                        text-decoration: none;
+                        color: gray;
+                    }
+                }
+
             }
+
 
             &__links {
                 margin-top: 1rem;
@@ -582,6 +602,7 @@ body {
                 @media (min-width: 650px) {
                     margin-top: 0;
                 }
+                
 
                 &__github, &__linkedin {
                     text-decoration: none;
