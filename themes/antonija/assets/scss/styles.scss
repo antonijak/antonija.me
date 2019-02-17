@@ -541,7 +541,6 @@ body {
             @media (min-width: 650px) {
                 width: 80%;
                 flex-direction: row;
-                justify-content: space-between;
                 align-items: center;
             }
             @include tablet-s {
