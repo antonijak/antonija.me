@@ -1,654 +1,653 @@
 // ---------- fonts
 @font-face {
-    font-family: 'Space Grotesk';
-    font-weight: normal;
-    src: url(/fonts/SpaceGrotesk-Regular.woff)format("woff");
+  font-family: 'Space Grotesk';
+  font-weight: normal;
+  src: url(/fonts/SpaceGrotesk-Regular.woff) format('woff');
 }
 
 @font-face {
-    font-family: 'Space Grotesk';
-    font-weight: bold;
-    src: url(/fonts/SpaceGrotesk-Bold.woff)format("woff");
+  font-family: 'Space Grotesk';
+  font-weight: bold;
+  src: url(/fonts/SpaceGrotesk-Bold.woff) format('woff');
 }
 
 @font-face {
-    font-family: 'Space Grotesk';
-    font-weight: 500;
-    src: url(/fonts/SpaceGrotesk-SemiBold.woff)format("woff");
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+  src: url(/fonts/SpaceGrotesk-SemiBold.woff) format('woff');
 }
 
-$font-family-primary: Karla,
-Arial,
-Helvetica,
-sans-serif;
+$font-family-primary: Karla, Arial, Helvetica, sans-serif;
 $font-family-secondary: 'Space Grotesk';
 // ---------- media queries
 
 @mixin phone-big {
-    @media (min-height: 570px) {
-        @content;
-    }
+  @media (min-height: 570px) {
+    @content;
+  }
 }
 
 @mixin tablet-s {
-    @media (min-width: 600px) {
-        @content;
-    }
+  @media (min-width: 600px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (min-width: 800px) {
-        @content;
-    }
+  @media (min-width: 800px) {
+    @content;
+  }
 }
 
 @mixin tablet-l {
-    @media (min-width: 1024px) {
-        @content;
-    }
+  @media (min-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin tablet-landscape {
-    @media (min-width: 1200px) {
-        @content;
-    }
+  @media (min-width: 1200px) {
+    @content;
+  }
 }
 
 @mixin desktop-s {
-    @media (min-width: 1400px) {
-        @content;
-    }
+  @media (min-width: 1400px) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: 1800px) {
-        @content;
-    }
+  @media (min-width: 1800px) {
+    @content;
+  }
 }
 
 // ---------- colors
-$primary: #454D52;
-$secondary: #F55252;
-$third: #FF8787;
-$link: #FFECEC;
-$title: #242C31;
+$primary: #454d52;
+$secondary: #f55252;
+$third: #ff8787;
+$link: #ffecec;
+$title: #242c31;
 $tech: rgba(36, 44, 49, 0.42);
-$footer: #FBFBFB;
+$footer: #fbfbfb;
 // ---------- styles
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth; 
-  }
+  scroll-behavior: smooth;
+}
 
 body {
-    color: $primary;
-    font-family: $font-family-primary;
+  color: $primary;
+  font-family: $font-family-primary;
 
-        .main-header {
-            min-width: 300px;
-            height: 100vh;
-            min-height: 35rem;
-            padding: 15vh 1.3rem 0 1.3rem;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-content: space-between;
-            @include phone-big {
-                padding-top: 25vh;
-            }
-            @include tablet-s {
-                width: 80%;
-            }
-            @include tablet {
-                width: 70%;
-            }
-            @include tablet-l {
-                padding-top: 30vh;
-                width: 60%;
-            }
-            @include tablet-landscape {
-                width: 50%;
-            }
-            @include desktop-s {
-                width: 45.5%;
-            }
-            @include desktop {
-                max-width: 800px;
-            }
-
-            &__title {
-                width: 100%;
-                text-align: center;
-                font-size: 2.2rem;
-                font-family: $font-family-secondary;
-                font-weight: 500;
-                color: $title;
-                margin-bottom: 1.5rem;
-                @include tablet-s {
-                    font-size: 2.9rem;
-                }
-                @include desktop-s {
-                    font-size: 3rem;
-                }
-            }
-
-            &__text {
-                width: 100%;
-                text-align: center;
-                font-size: 1rem;
-                line-height: 1.5rem;
-                @include tablet-s {
-                    font-size: 1.5rem;
-                    line-height: 2.2rem;
-                }
-                &__profession {
-                    display: inline-block;
-                    color: $secondary;
-                    background: $link;
-                    font-family: $font-family-secondary;
-                    font-weight: 500;
-                    padding: .2rem;
-                    border-radius: 3px;
-                }
-            }
-
-            &__links {
-                margin-top: 1.5rem;
-                display: flex;
-                justify-content: center;
-                @include tablet-s {
-                    margin-top: 2.1rem;
-                }
-                &__github {
-                    margin-right: 1.4rem;
-                }
-                &__linkedin {
-                    height: 2rem;
-                }
-                .fab {
-                    font-size: 2rem;
-                    color: $primary;
-                    -webkit-transition: color .5s; 
-                    transition: color .5s;
-                    -webkit-transition-timing-function: ease;
-                    transition-timing-function: ease;
-
-                    &:hover {
-                        color: $secondary;
-                    }
-                }
-
-                .fa-linkedin {
-                    font-size: 2.1rem;
-                }
-            }
-
-            &__btn-container {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                padding-bottom: 10vh;
-
-                &__btn {
-                    text-decoration: none;
-                    width: fit-content;
-                    background: $secondary;
-                    border: 1px solid $secondary;
-                    color: white;
-                    padding: .7rem 1.2rem;
-                    font-size: 1rem;
-                    line-height: 1.4;
-                    border-radius: 3px;
-                    font-family: $font-family-secondary;
-                    -webkit-transition: background-color .5s; /* Safari */
-                    transition: background-color .5s;
-                    -webkit-transition-timing-function: ease;
-                    transition-timing-function: ease;
-                    margin-bottom: 3rem;
-                    @include tablet-s {
-                        margin-bottom: 0;
-                    }
-                    @include desktop-s {
-                        font-size: 1.1rem;
-                    }
-
-                    &:hover {
-                        background-color: $third;
-                        border-color: $third;
-                    }
-                }
-            }
-        }
-
-        .projects {
-            margin: 0 auto;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 8vh 1.3rem 0 1.3rem;
-            @include tablet-s {
-                align-items: flex-start;
-                width: 80%;
-                margin-top: 10vh;
-            }
-            @include tablet {
-                width: 70%;
-            }
-            @include tablet-l {
-                width: 60%;
-            }
-            @include tablet-landscape {
-                width: 50%;
-            }
-            @include desktop-s {
-                width: 45.5%;
-            }
-            @include desktop {
-                max-width: 800px;
-            }
-
-            &__title {
-                margin-bottom: 2.3rem;
-                font-size: 2rem;
-                color: $title;
-                font-family: $font-family-secondary;
-                @include tablet-s {
-                    margin-bottom: 2.5rem;
-                }
-                @include tablet-landscape {
-                    margin-bottom: 3rem;
-                }
-                @include desktop-s {
-                    margin-bottom: 3.5rem;
-                    font-size: 2.5rem;
-                }
-            }
-
-            &__item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 2.1rem;
-                width: 100%;
-                @include tablet-s {
-                    align-items: flex-start;   
-                }
-                @include tablet-l {
-                    margin-bottom: 2.5;
-                }
-                @include tablet-landscape {
-                    margin-bottom: 3.5rem;
-                }
-
-                &__title {
-                    font-size: 1.3rem;
-                    color: $title;
-                    font-family: $font-family-secondary;
-                    margin-bottom: .3rem;
-                    text-align: center;
-                    @include tablet-s {
-                        text-align: left;
-                    }
-                    @include desktop-s {
-                        font-size: 1.5rem;
-                        margin-bottom: .5rem;
-                    }
-                }
-
-                &__technologies {
-                    color: $tech;
-                    font-size: .9rem;
-                    list-style: none;
-                    margin-bottom: .1rem;
-                    line-height: 1.4rem;
-                    text-align: center;
-                    @include tablet-s {
-                        text-align: left;
-                        margin-bottom: .5rem;
-                    }
-                    @include tablet-landscape {
-                        font-size: 1.1rem;
-                        line-height: 1.6rem;
-                    }
-                }
-
-                &__text {
-                    font-size: .9rem;
-                    margin-bottom: 1rem;
-                    line-height: 1.3rem;
-                    text-align: center;
-                    @include tablet-s {
-                        text-align: left;
-                        line-height: 1.4rem;
-                    }
-                    @include tablet-landscape {
-                        font-size: 1.1rem;
-                        line-height: 1.6rem;
-                        margin-bottom: 1.5rem;
-                    }
-
-                    &__link {
-                        color: $primary;
-
-                        &:hover {
-                            color: $tech;
-                        }
-                    }
-                }
-
-                &__buttons {
-                    display: flex;
-                    width: 100%;
-                    justify-content: center;
-                    @include tablet-s {
-                        justify-content: flex-start;
-                    }
-
-                    &__github {
-                        border: 1px solid $secondary;
-                        border-radius: 3px;
-                        background: white;
-                        display: flex;
-                        align-items: center;
-                        padding: .4rem .5rem;
-                        padding-right: .9rem;
-                        text-decoration: none;
-                        position: relative;
-                        margin-right: 1rem;
-
-                        .github__transition-color {
-                            position: absolute;
-                            top: 0;
-                            left:0;
-                            height: 100%;
-                            width: 0;
-                            background-color: $link;
-                            -webkit-transition: width .1s; /* Safari */
-                            transition: width .1s;
-                            -webkit-transition-timing-function: ease;
-                            transition-timing-function: ease;
-                        }
-
-                        &:hover .github__transition-color {
-                            width: 100%;
-                        }
-
-                        .github__icon {
-                            margin-right: .7rem;
-                            z-index: 1;
-                            height: 1.2rem;
-                        }
-
-                        .github__text {
-                            color: $secondary;
-                            letter-spacing: -.3px;
-                            font-size: .9rem;
-                            line-height: 1.2;
-                            z-index: 1;
-                            @include desktop-s {
-                                font-size: 1.1rem;
-                            }
-                        }
-                    }
-
-                    &__demo {
-                        padding: .4rem .9rem;
-                        position: relative;
-                        margin-right: 1rem;
-                        border: none;
-                        outline: none;
-                        background: white;
-                        color: $secondary;
-                        font-family: $font-family-primary;
-                        letter-spacing: -.3px;
-                        font-size: .9rem;
-                        line-height: 1.2;
-                        text-decoration: none;
-                        @include desktop-s {
-                            font-size: 1.1rem;
-                        }  
-
-                        &--disabled {
-                            color: $secondary;
-                            font-family: $font-family-primary;
-                            letter-spacing: -.5px;
-                            font-size: .8rem;
-                            line-height: 1.2;
-                            @include desktop-s {
-                                font-size: 1.1rem;
-                            }  
-                        }
-
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
-
-                    .private-repo {
-                        padding: .4rem 0;
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-    
-    footer {
-        width: 100%;
-        padding-left: 1.3rem;
-        padding-right: 1.3rem;
-        margin-bottom: 2rem;
-        @include tablet-s {
-            margin-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .contact {
-            width: 100%;
-            background: $footer;
-            padding: .8rem 0 1rem;
-            @include tablet-s {
-                padding: 2rem 0;
-            }
-            @include tablet {
-                padding: 4rem 0;
-            }
-
-            &__text {
-                padding: 0 1.3rem;
-                text-align: center;
-                width: 100%;
-                margin: 0 auto;
-                font-size: 1rem;
-                line-height: 1.5rem;
-                position: relative;
-
-                @include tablet-s {
-                    width: 80%;
-                    text-align: left;
-                    font-size: 1.2rem;
-                    line-height: 2rem;
-                }
-                @include tablet {
-                    width: 70%;
-                    font-size: 1.3rem;
-                    line-height: 2.3rem;
-                }
-                @include tablet-l {
-                    width: 60%;
-                }
-                @include tablet-landscape {
-                    width: 50%;
-                    font-size: 1.5rem;
-                }
-                @include desktop-s {
-                    width: 45.5%;
-                }
-                @include desktop {
-                    max-width: 800px;
-                }
-
-                &__email {
-                    display: block;
-                    color: $secondary;
-                    background: #FFECEC;
-                    font-family: $font-family-secondary;
-                    font-weight: 500;
-                    font-size: 1.1rem;
-                    line-height: 1.5rem;
-                    padding: .1rem;
-                    width: 14rem;
-                    height: 1.8rem;
-                    border-radius: 3px;
-                    text-align: center;
-                    margin: .4rem auto 0;
-                    @include tablet-s {
-                        font-size: 1.4rem;
-                        line-height: 2.4rem;
-                        width: 18rem;
-                        height: 2.5rem;
-                        margin: 0;
-                    }
-                    @include desktop-s {
-                        display: inline-block;
-                    }
-                }
-
-                &__copy {
-                    position: absolute;
-                    top: 0;
-                    left: 1rem;
-                    z-index: -3;
-                }
-            }
-        }
-        
-        .copyright {
-            width: 100%;
-            height: fit-content;
-            padding: 2rem 1.3rem;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            
-            @media (min-width: 650px) {
-                width: 80%;
-                flex-direction: row;
-                align-items: center;
-            }
-            @include tablet-s {
-                padding: 3rem 0;
-                align-items: flex-start;
-            }
-            @include tablet {
-                width: 70%;
-                padding: 4rem 0;
-            }
-            @include tablet-l {
-                width: 60%;
-            }
-            @include tablet-landscape {
-                width: 50%;
-            }
-            @include desktop-s {
-                width: 45%;
-            }
-            @include desktop {
-                max-width: 800px;
-            }
-
-            &__text {
-                font-size: .8rem;
-                padding: 0 1.3rem;
-                @include tablet {
-                    font-size: 1rem;
-                }
-                @include tablet-s {
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-
-                &__first, &__design, &__last {
-                    text-align: center;
-                    @include tablet-s {
-                        margin-right: 5px;
-                    }
-                }
-
-                &__design {
-                    &__link {
-                        text-decoration: none;
-                        color: gray;
-
-                        &:hover {
-                            color: $primary;
-                        }
-                    }
-                }
-
-
-
-            }
-
-
-            &__links {
-                margin-top: 1rem;
-                display: flex;
-                justify-content: center;
-                padding: 0 1.3rem;
-
-                @media (min-width: 650px) {
-                    margin-top: 0;
-                }
-                
-
-                &__github, &__linkedin {
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    
-                    &__icon {
-                        height: 1.1rem;
-                    }
-
-                    .fab {
-                        font-size: 1.5rem;
-                        color: $primary;
-                        -webkit-transition: color .5s; 
-                        transition: color .5s;
-                        -webkit-transition-timing-function: ease;
-                        transition-timing-function: ease;
-                        @include tablet-s {
-                            font-size: 1rem;
-                        }
-
-                        &:hover {
-                            color: $secondary;
-                        }
-                    }
-
-                    .fa-linkedin {
-                        font-size: 1.6rem;
-                        @include tablet-s {
-                            font-size: 1.1rem;
-                        }
-                    }
-                }
-
-                &__github {
-                    margin-right: 2rem;
-                    @include tablet-s {
-                        margin-right: .5rem;
-                    }
-                }
-            }
-        }
+  .main-header {
+    min-width: 300px;
+    height: 100vh;
+    min-height: 35rem;
+    padding: 15vh 1.3rem 0 1.3rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    @include phone-big {
+      padding-top: 25vh;
     }
+    @include tablet-s {
+      width: 80%;
+    }
+    @include tablet {
+      width: 70%;
+    }
+    @include tablet-l {
+      padding-top: 30vh;
+      width: 60%;
+    }
+    @include tablet-landscape {
+      width: 50%;
+    }
+    @include desktop-s {
+      width: 45.5%;
+    }
+    @include desktop {
+      max-width: 800px;
+    }
+
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 2.2rem;
+      font-family: $font-family-secondary;
+      font-weight: 500;
+      color: $title;
+      margin-bottom: 1.5rem;
+      @include tablet-s {
+        font-size: 2.9rem;
+      }
+      @include desktop-s {
+        font-size: 3rem;
+      }
+    }
+
+    &__text {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      @include tablet-s {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+      }
+      &__profession {
+        display: inline-block;
+        color: $secondary;
+        background: $link;
+        font-family: $font-family-secondary;
+        font-weight: 500;
+        padding: 0.2rem;
+        border-radius: 3px;
+      }
+    }
+
+    &__links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      @include tablet-s {
+        margin-top: 2.1rem;
+      }
+      &__github {
+        margin-right: 1.4rem;
+      }
+      &__linkedin {
+        height: 2rem;
+      }
+      .fab {
+        font-size: 2rem;
+        color: $primary;
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+        -webkit-transition-timing-function: ease;
+        transition-timing-function: ease;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+
+      .fa-linkedin {
+        font-size: 2.1rem;
+      }
+    }
+
+    &__btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 10vh;
+
+      &__btn {
+        text-decoration: none;
+        width: fit-content;
+        background: $secondary;
+        border: 1px solid $secondary;
+        color: white;
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+        line-height: 1.4;
+        border-radius: 3px;
+        font-family: $font-family-secondary;
+        -webkit-transition: background-color 0.5s; /* Safari */
+        transition: background-color 0.5s;
+        -webkit-transition-timing-function: ease;
+        transition-timing-function: ease;
+        margin-bottom: 3rem;
+        @include tablet-s {
+          margin-bottom: 0;
+        }
+        @include desktop-s {
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background-color: $third;
+          border-color: $third;
+        }
+      }
+    }
+  }
+
+  .projects {
+    margin: 0 auto;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 1.3rem 0 1.3rem;
+    @include tablet-s {
+      align-items: flex-start;
+      width: 80%;
+      margin-top: 10vh;
+    }
+    @include tablet {
+      width: 70%;
+    }
+    @include tablet-l {
+      width: 60%;
+    }
+    @include tablet-landscape {
+      width: 50%;
+    }
+    @include desktop-s {
+      width: 45.5%;
+    }
+    @include desktop {
+      max-width: 800px;
+    }
+
+    &__title {
+      margin-bottom: 2.3rem;
+      font-size: 2rem;
+      color: $title;
+      font-family: $font-family-secondary;
+      @include tablet-s {
+        margin-bottom: 2.5rem;
+      }
+      @include tablet-landscape {
+        margin-bottom: 3rem;
+      }
+      @include desktop-s {
+        margin-bottom: 3.5rem;
+        font-size: 2.5rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.1rem;
+      width: 100%;
+      @include tablet-s {
+        align-items: flex-start;
+      }
+      @include tablet-l {
+        margin-bottom: 2.5;
+      }
+      @include tablet-landscape {
+        margin-bottom: 3.5rem;
+      }
+
+      &__title {
+        font-size: 1.3rem;
+        color: $title;
+        font-family: $font-family-secondary;
+        margin-bottom: 0.3rem;
+        text-align: center;
+        @include tablet-s {
+          text-align: left;
+        }
+        @include desktop-s {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &__technologies {
+        color: $tech;
+        font-size: 0.9rem;
+        list-style: none;
+        margin-bottom: 0.1rem;
+        line-height: 1.4rem;
+        text-align: center;
+        @include tablet-s {
+          text-align: left;
+          margin-bottom: 0.5rem;
+        }
+        @include tablet-landscape {
+          font-size: 1.1rem;
+          line-height: 1.6rem;
+        }
+      }
+
+      &__text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.3rem;
+        text-align: center;
+        @include tablet-s {
+          text-align: left;
+          line-height: 1.4rem;
+        }
+        @include tablet-landscape {
+          font-size: 1.1rem;
+          line-height: 1.6rem;
+          margin-bottom: 1.5rem;
+        }
+
+        &__link {
+          color: $primary;
+
+          &:hover {
+            color: $tech;
+          }
+        }
+      }
+
+      &__buttons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        @include tablet-s {
+          justify-content: flex-start;
+        }
+
+        &__github {
+          border: 1px solid $secondary;
+          border-radius: 3px;
+          background: white;
+          display: flex;
+          align-items: center;
+          padding: 0.4rem 0.5rem;
+          padding-right: 0.9rem;
+          text-decoration: none;
+          position: relative;
+          margin-right: 1rem;
+
+          .github__transition-color {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: $link;
+            -webkit-transition: width 0.1s; /* Safari */
+            transition: width 0.1s;
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+          }
+
+          &:hover .github__transition-color {
+            width: 100%;
+          }
+
+          .github__icon {
+            margin-right: 0.7rem;
+            z-index: 1;
+            height: 1.2rem;
+          }
+
+          .github__text {
+            color: $secondary;
+            letter-spacing: -0.3px;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            z-index: 1;
+            @include desktop-s {
+              font-size: 1.1rem;
+            }
+          }
+        }
+
+        &__demo {
+          padding: 0.4rem 0.9rem;
+          position: relative;
+          margin-right: 1rem;
+          border: none;
+          outline: none;
+          background: white;
+          color: $secondary;
+          font-family: $font-family-primary;
+          letter-spacing: -0.3px;
+          font-size: 0.9rem;
+          line-height: 1.2;
+          text-decoration: none;
+          @include desktop-s {
+            font-size: 1.1rem;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &--disabled {
+            color: $secondary;
+            font-family: $font-family-primary;
+            letter-spacing: -0.5px;
+            font-size: 0.8rem;
+            line-height: 1.2;
+            @include desktop-s {
+              font-size: 1.1rem;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .private-repo {
+          padding: 0.4rem 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    margin-bottom: 2rem;
+    @include tablet-s {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .contact {
+      width: 100%;
+      background: $footer;
+      padding: 0.8rem 0 1rem;
+      @include tablet-s {
+        padding: 2rem 0;
+      }
+      @include tablet {
+        padding: 4rem 0;
+      }
+
+      &__text {
+        padding: 0 1.3rem;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        position: relative;
+
+        @include tablet-s {
+          width: 80%;
+          text-align: left;
+          font-size: 1.2rem;
+          line-height: 2rem;
+        }
+        @include tablet {
+          width: 70%;
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
+        @include tablet-l {
+          width: 60%;
+        }
+        @include tablet-landscape {
+          width: 50%;
+          font-size: 1.5rem;
+        }
+        @include desktop-s {
+          width: 45.5%;
+        }
+        @include desktop {
+          max-width: 800px;
+        }
+
+        &__email {
+          display: block;
+          color: $secondary;
+          background: #ffecec;
+          font-family: $font-family-secondary;
+          font-weight: 500;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+          padding: 0.1rem;
+          width: 14rem;
+          height: 1.8rem;
+          border-radius: 3px;
+          text-align: center;
+          margin: 0.4rem auto 0;
+          @include tablet-s {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            width: 18rem;
+            height: 2.5rem;
+            margin: 0;
+          }
+          @include desktop-s {
+            display: inline-block;
+          }
+        }
+
+        &__copy {
+          position: absolute;
+          top: 0;
+          left: 1rem;
+          z-index: -3;
+        }
+      }
+    }
+
+    .copyright {
+      width: 100%;
+      height: fit-content;
+      padding: 2rem 1.3rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 650px) {
+        width: 80%;
+        flex-direction: row;
+        align-items: center;
+      }
+      @include tablet-s {
+        padding: 3rem 0;
+        align-items: flex-start;
+      }
+      @include tablet {
+        width: 70%;
+        padding: 4rem 0;
+      }
+      @include tablet-l {
+        width: 60%;
+      }
+      @include tablet-landscape {
+        width: 50%;
+      }
+      @include desktop-s {
+        width: 45%;
+      }
+      @include desktop {
+        max-width: 800px;
+      }
+
+      &__text {
+        font-size: 0.8rem;
+        padding: 0 1.3rem;
+        @include tablet {
+          font-size: 1rem;
+        }
+        @include tablet-s {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        &__first,
+        &__design,
+        &__last {
+          text-align: center;
+          @include tablet-s {
+            margin-right: 5px;
+          }
+        }
+
+        &__design {
+          &__link {
+            text-decoration: none;
+            color: gray;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      &__links {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        padding: 0 1.3rem;
+
+        @media (min-width: 650px) {
+          margin-top: 0;
+        }
+
+        &__github,
+        &__linkedin {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+
+          &__icon {
+            height: 1.1rem;
+          }
+
+          .fab {
+            font-size: 1.5rem;
+            color: $primary;
+            -webkit-transition: color 0.5s;
+            transition: color 0.5s;
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+            @include tablet-s {
+              font-size: 1rem;
+            }
+
+            &:hover {
+              color: $secondary;
+            }
+          }
+
+          .fa-linkedin {
+            font-size: 1.6rem;
+            @include tablet-s {
+              font-size: 1.1rem;
+            }
+          }
+        }
+
+        &__github {
+          margin-right: 2rem;
+          @include tablet-s {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
