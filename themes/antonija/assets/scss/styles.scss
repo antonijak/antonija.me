@@ -52,7 +52,13 @@ $font-family-secondary: 'Space Grotesk';
 }
 
 @mixin desktop-s {
-  @media (min-width: 1400px) {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop-m {
+  @media (min-width: 1680px) {
     @content;
   }
 }
@@ -100,23 +106,21 @@ body {
       padding-top: 25vh;
     }
     @include tablet-s {
-      width: 80%;
+      width: 90%;
     }
     @include tablet {
-      width: 70%;
+      width: 80%;
     }
     @include tablet-l {
       padding-top: 30vh;
       width: 60%;
     }
-    @include tablet-landscape {
-      width: 50%;
-    }
+
     @include desktop-s {
-      width: 45.5%;
+      width: 70%;
     }
-    @include desktop {
-      max-width: 800px;
+    @include desktop-m {
+      max-width: 950px;
     }
 
     &__title {
@@ -232,27 +236,25 @@ body {
     padding: 8vh 1.3rem 0 1.3rem;
     @include tablet-s {
       align-items: flex-start;
-      width: 80%;
+      width: 90%;
       margin-top: 10vh;
     }
     @include tablet {
-      width: 70%;
+      width: 80%;
     }
     @include tablet-l {
       width: 60%;
     }
-    @include tablet-landscape {
-      width: 50%;
-    }
     @include desktop-s {
-      width: 45.5%;
+      width: 70%;
+      justify-content: space-between;
     }
-    @include desktop {
-      max-width: 800px;
+    @include desktop-m {
+      max-width: 950px;
     }
 
     &__title {
-      margin-bottom: 2.3rem;
+      margin-bottom: 2.7rem;
       font-size: 2rem;
       color: $title;
       font-family: $font-family-secondary;
@@ -269,172 +271,214 @@ body {
     }
 
     &__item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2.1rem;
-      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 1rem;
+      margin-bottom: 3rem;
+
       @include tablet-s {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 0;
         align-items: flex-start;
+        margin-bottom: 3rem;
+      }
+      @include tablet {
+        margin-bottom: 4rem;
       }
       @include tablet-l {
-        margin-bottom: 2.5;
+        margin-bottom: 5rem;
       }
       @include tablet-landscape {
-        margin-bottom: 3.5rem;
+        margin-bottom: 6rem;
       }
 
-      &__title {
-        font-size: 1.3rem;
-        color: $title;
-        font-family: $font-family-secondary;
-        margin-bottom: 0.3rem;
-        text-align: center;
+      &__image {
+        margin: 0 auto;
+        width: 50%;
+        align-self: center;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        -webkit-transition: filter 1s; /* Safari */
+        transition: filter 0.9s;
+        box-shadow: 1px 2px 2px rgba(214, 214, 214, 0.5);
+        filter: grayscale(100%);
+        border-radius: 2px;
         @include tablet-s {
-          text-align: left;
+          margin: 0;
+          width: 100%;
+          height: 100%;
         }
-        @include desktop-s {
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
+
+        &:hover {
+          filter: none;
         }
       }
 
-      &__technologies {
-        color: $tech;
-        font-size: 0.9rem;
-        list-style: none;
-        margin-bottom: 0.1rem;
-        line-height: 1.4rem;
-        text-align: center;
-        @include tablet-s {
-          text-align: left;
-          margin-bottom: 0.5rem;
-        }
-        @include tablet-landscape {
-          font-size: 1.1rem;
-          line-height: 1.6rem;
-        }
-      }
-
-      &__text {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        line-height: 1.3rem;
-        text-align: center;
-        @include tablet-s {
-          text-align: left;
-          line-height: 1.4rem;
-        }
-        @include tablet-landscape {
-          font-size: 1.1rem;
-          line-height: 1.6rem;
-          margin-bottom: 1.5rem;
-        }
-
-        &__link {
-          color: $primary;
-
-          &:hover {
-            color: $tech;
-          }
-        }
-      }
-
-      &__buttons {
+      &__content {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
         width: 100%;
-        justify-content: center;
         @include tablet-s {
-          justify-content: flex-start;
+          align-items: flex-start;
+        }
+        &__title {
+          font-size: 1.3rem;
+          color: $title;
+          font-family: $font-family-secondary;
+          margin-bottom: 0.3rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+          }
+          @include desktop-s {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
         }
 
-        &__github {
-          border: 1px solid $secondary;
-          border-radius: 3px;
-          background: white;
-          display: flex;
-          align-items: center;
-          padding: 0.4rem 0.5rem;
-          padding-right: 0.9rem;
-          text-decoration: none;
-          position: relative;
-          margin-right: 1rem;
+        &__technologies {
+          color: $tech;
+          font-size: 0.9rem;
+          list-style: none;
+          margin-bottom: 0.1rem;
+          line-height: 1.4rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+            margin-bottom: 0.5rem;
+          }
+          @include tablet-landscape {
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+          }
+        }
 
-          .github__transition-color {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            background-color: $link;
-            -webkit-transition: width 0.1s; /* Safari */
-            transition: width 0.1s;
-            -webkit-transition-timing-function: ease;
-            transition-timing-function: ease;
+        &__text {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+          line-height: 1.3rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+            line-height: 1.4rem;
+          }
+          @include tablet-landscape {
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+            margin-bottom: 1.5rem;
           }
 
-          &:hover .github__transition-color {
-            width: 100%;
-          }
+          &__link {
+            color: $primary;
 
-          .github__icon {
-            margin-right: 0.7rem;
-            z-index: 1;
-            height: 1.2rem;
-          }
-
-          .github__text {
-            color: $secondary;
-            letter-spacing: -0.3px;
-            font-size: 0.9rem;
-            line-height: 1.2;
-            z-index: 1;
-            @include desktop-s {
-              font-size: 1.1rem;
+            &:hover {
+              color: $tech;
             }
           }
         }
 
-        &__demo {
-          padding: 0.4rem 0.9rem;
-          position: relative;
-          margin-right: 1rem;
-          border: none;
-          outline: none;
-          background: white;
-          color: $secondary;
-          font-family: $font-family-primary;
-          letter-spacing: -0.3px;
-          font-size: 0.9rem;
-          line-height: 1.2;
-          text-decoration: none;
-          @include desktop-s {
-            font-size: 1.1rem;
+        &__buttons {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          @include tablet-s {
+            justify-content: flex-start;
           }
 
-          &:hover {
-            text-decoration: underline;
+          &__github {
+            border: 1px solid $secondary;
+            border-radius: 3px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0.4rem 0.5rem;
+            padding-right: 0.9rem;
+            text-decoration: none;
+            position: relative;
+            margin-right: 1rem;
+
+            .github__transition-color {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 0;
+              background-color: $link;
+              -webkit-transition: width 0.1s; /* Safari */
+              transition: width 0.1s;
+              -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+            }
+
+            &:hover .github__transition-color {
+              width: 100%;
+            }
+
+            .github__icon {
+              margin-right: 0.7rem;
+              z-index: 1;
+              height: 1.2rem;
+            }
+
+            .github__text {
+              color: $secondary;
+              letter-spacing: -0.3px;
+              font-size: 0.9rem;
+              line-height: 1.2;
+              z-index: 1;
+              @include desktop-s {
+                font-size: 1.1rem;
+              }
+            }
           }
 
-          &--disabled {
+          &__demo {
+            padding: 0.4rem 0.9rem;
+            position: relative;
+            margin-right: 1rem;
+            border: none;
+            outline: none;
+            background: white;
             color: $secondary;
             font-family: $font-family-primary;
-            letter-spacing: -0.5px;
-            font-size: 0.8rem;
+            letter-spacing: -0.3px;
+            font-size: 0.9rem;
             line-height: 1.2;
+            text-decoration: none;
             @include desktop-s {
               font-size: 1.1rem;
             }
 
             &:hover {
-              text-decoration: none;
+              text-decoration: underline;
+            }
+
+            &--disabled {
+              color: $secondary;
+              font-family: $font-family-primary;
+              letter-spacing: -0.5px;
+              font-size: 0.8rem;
+              line-height: 1.2;
+              @include desktop-s {
+                font-size: 1.1rem;
+              }
+
+              &:hover {
+                text-decoration: none;
+              }
             }
           }
-        }
 
-        .private-repo {
-          padding: 0.4rem 0;
-          margin-right: 0;
+          .private-repo {
+            padding: 0.4rem 0;
+            margin-right: 0;
+          }
         }
       }
     }
@@ -455,6 +499,7 @@ body {
       width: 100%;
       background: $footer;
       padding: 0.8rem 0 1rem;
+
       @include tablet-s {
         padding: 2rem 0;
       }
@@ -470,15 +515,16 @@ body {
         font-size: 1rem;
         line-height: 1.5rem;
         position: relative;
+        // height: 3rem;
 
         @include tablet-s {
-          width: 80%;
+          width: 90%;
           text-align: left;
           font-size: 1.2rem;
           line-height: 2rem;
         }
         @include tablet {
-          width: 70%;
+          width: 80%;
           font-size: 1.3rem;
           line-height: 2.3rem;
         }
@@ -486,15 +532,19 @@ body {
           width: 60%;
         }
         @include tablet-landscape {
-          width: 50%;
           font-size: 1.5rem;
         }
         @include desktop-s {
-          width: 45.5%;
+          width: 70%;
+          justify-content: space-between;
         }
-        @include desktop {
-          max-width: 800px;
+        @include desktop-m {
+          max-width: 950px;
         }
+
+        // &__words {
+        //   line-height: 3rem;
+        // }
 
         &__email {
           display: block;
@@ -540,29 +590,28 @@ body {
       flex-direction: column;
 
       @media (min-width: 650px) {
-        width: 80%;
         flex-direction: row;
-        align-items: center;
+        justify-content: space-between;
       }
       @include tablet-s {
         padding: 3rem 0;
         align-items: flex-start;
+        width: 90%;
       }
       @include tablet {
-        width: 70%;
+        width: 80%;
         padding: 4rem 0;
       }
       @include tablet-l {
         width: 60%;
       }
-      @include tablet-landscape {
-        width: 50%;
-      }
+
       @include desktop-s {
-        width: 45%;
+        width: 70%;
+        justify-content: space-between;
       }
-      @include desktop {
-        max-width: 800px;
+      @include desktop-m {
+        max-width: 950px;
       }
 
       &__text {
