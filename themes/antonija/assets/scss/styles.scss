@@ -521,12 +521,12 @@ body {
           text-align: left;
           font-size: 1.2rem;
           line-height: 2rem;
-          height: 3rem;
         }
         @include tablet {
           width: 80%;
           font-size: 1.3rem;
           line-height: 2.3rem;
+          height: 3rem;
         }
         @include tablet-l {
           width: 60%;
@@ -543,7 +543,7 @@ body {
         }
 
         &__words {
-          @include tablet-s {
+          @include tablet {
             line-height: 3rem;
           }
         }
