@@ -269,172 +269,180 @@ body {
     }
 
     &__item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2.1rem;
-      width: 100%;
-      @include tablet-s {
-        align-items: flex-start;
-      }
-      @include tablet-l {
-        margin-bottom: 2.5;
-      }
-      @include tablet-landscape {
-        margin-bottom: 3.5rem;
-      }
-
-      &__title {
-        font-size: 1.3rem;
-        color: $title;
-        font-family: $font-family-secondary;
-        margin-bottom: 0.3rem;
-        text-align: center;
-        @include tablet-s {
-          text-align: left;
-        }
-        @include desktop-s {
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      &__technologies {
-        color: $tech;
-        font-size: 0.9rem;
-        list-style: none;
-        margin-bottom: 0.1rem;
-        line-height: 1.4rem;
-        text-align: center;
-        @include tablet-s {
-          text-align: left;
-          margin-bottom: 0.5rem;
-        }
-        @include tablet-landscape {
-          font-size: 1.1rem;
-          line-height: 1.6rem;
-        }
-      }
-
-      &__text {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        line-height: 1.3rem;
-        text-align: center;
-        @include tablet-s {
-          text-align: left;
-          line-height: 1.4rem;
-        }
-        @include tablet-landscape {
-          font-size: 1.1rem;
-          line-height: 1.6rem;
-          margin-bottom: 1.5rem;
-        }
-
-        &__link {
-          color: $primary;
-
-          &:hover {
-            color: $tech;
-          }
-        }
-      }
-
-      &__buttons {
+      &__content {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2.1rem;
         width: 100%;
-        justify-content: center;
         @include tablet-s {
-          justify-content: flex-start;
+          align-items: flex-start;
+        }
+        @include tablet-l {
+          margin-bottom: 2.5;
+        }
+        @include tablet-landscape {
+          margin-bottom: 3.5rem;
+        }
+        &__image {
+          border: 1px solid rgb(238, 238, 238);
+          width: 50%;
+          margin: 0 auto;
+          margin-bottom: 1rem;
         }
 
-        &__github {
-          border: 1px solid $secondary;
-          border-radius: 3px;
-          background: white;
-          display: flex;
-          align-items: center;
-          padding: 0.4rem 0.5rem;
-          padding-right: 0.9rem;
-          text-decoration: none;
-          position: relative;
-          margin-right: 1rem;
+        &__title {
+          font-size: 1.3rem;
+          color: $title;
+          font-family: $font-family-secondary;
+          margin-bottom: 0.3rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+          }
+          @include desktop-s {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
+        }
 
-          .github__transition-color {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            background-color: $link;
-            -webkit-transition: width 0.1s; /* Safari */
-            transition: width 0.1s;
-            -webkit-transition-timing-function: ease;
-            transition-timing-function: ease;
+        &__technologies {
+          color: $tech;
+          font-size: 0.9rem;
+          list-style: none;
+          margin-bottom: 0.1rem;
+          line-height: 1.4rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+            margin-bottom: 0.5rem;
+          }
+          @include tablet-landscape {
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+          }
+        }
+
+        &__text {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+          line-height: 1.3rem;
+          text-align: center;
+          @include tablet-s {
+            text-align: left;
+            line-height: 1.4rem;
+          }
+          @include tablet-landscape {
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+            margin-bottom: 1.5rem;
           }
 
-          &:hover .github__transition-color {
-            width: 100%;
-          }
+          &__link {
+            color: $primary;
 
-          .github__icon {
-            margin-right: 0.7rem;
-            z-index: 1;
-            height: 1.2rem;
-          }
-
-          .github__text {
-            color: $secondary;
-            letter-spacing: -0.3px;
-            font-size: 0.9rem;
-            line-height: 1.2;
-            z-index: 1;
-            @include desktop-s {
-              font-size: 1.1rem;
+            &:hover {
+              color: $tech;
             }
           }
         }
 
-        &__demo {
-          padding: 0.4rem 0.9rem;
-          position: relative;
-          margin-right: 1rem;
-          border: none;
-          outline: none;
-          background: white;
-          color: $secondary;
-          font-family: $font-family-primary;
-          letter-spacing: -0.3px;
-          font-size: 0.9rem;
-          line-height: 1.2;
-          text-decoration: none;
-          @include desktop-s {
-            font-size: 1.1rem;
+        &__buttons {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          @include tablet-s {
+            justify-content: flex-start;
           }
 
-          &:hover {
-            text-decoration: underline;
+          &__github {
+            border: 1px solid $secondary;
+            border-radius: 3px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0.4rem 0.5rem;
+            padding-right: 0.9rem;
+            text-decoration: none;
+            position: relative;
+            margin-right: 1rem;
+
+            .github__transition-color {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 0;
+              background-color: $link;
+              -webkit-transition: width 0.1s; /* Safari */
+              transition: width 0.1s;
+              -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+            }
+
+            &:hover .github__transition-color {
+              width: 100%;
+            }
+
+            .github__icon {
+              margin-right: 0.7rem;
+              z-index: 1;
+              height: 1.2rem;
+            }
+
+            .github__text {
+              color: $secondary;
+              letter-spacing: -0.3px;
+              font-size: 0.9rem;
+              line-height: 1.2;
+              z-index: 1;
+              @include desktop-s {
+                font-size: 1.1rem;
+              }
+            }
           }
 
-          &--disabled {
+          &__demo {
+            padding: 0.4rem 0.9rem;
+            position: relative;
+            margin-right: 1rem;
+            border: none;
+            outline: none;
+            background: white;
             color: $secondary;
             font-family: $font-family-primary;
-            letter-spacing: -0.5px;
-            font-size: 0.8rem;
+            letter-spacing: -0.3px;
+            font-size: 0.9rem;
             line-height: 1.2;
+            text-decoration: none;
             @include desktop-s {
               font-size: 1.1rem;
             }
 
             &:hover {
-              text-decoration: none;
+              text-decoration: underline;
+            }
+
+            &--disabled {
+              color: $secondary;
+              font-family: $font-family-primary;
+              letter-spacing: -0.5px;
+              font-size: 0.8rem;
+              line-height: 1.2;
+              @include desktop-s {
+                font-size: 1.1rem;
+              }
+
+              &:hover {
+                text-decoration: none;
+              }
             }
           }
-        }
 
-        .private-repo {
-          padding: 0.4rem 0;
-          margin-right: 0;
+          .private-repo {
+            padding: 0.4rem 0;
+            margin-right: 0;
+          }
         }
       }
     }
