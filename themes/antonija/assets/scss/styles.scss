@@ -297,7 +297,7 @@ body {
 
       &__image {
         margin: 0 auto;
-        width: 50%;
+        width: 60%;
         align-self: center;
         height: 100%;
         object-fit: cover;
@@ -515,13 +515,13 @@ body {
         font-size: 1rem;
         line-height: 1.5rem;
         position: relative;
-        height: 3rem;
 
         @include tablet-s {
           width: 90%;
           text-align: left;
           font-size: 1.2rem;
           line-height: 2rem;
+          height: 3rem;
         }
         @include tablet {
           width: 80%;
@@ -543,7 +543,9 @@ body {
         }
 
         &__words {
-          line-height: 3rem;
+          @include tablet-s {
+            line-height: 3rem;
+          }
         }
 
         &__email {
