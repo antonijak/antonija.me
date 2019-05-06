@@ -273,9 +273,9 @@ body {
     &__item {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 15rem 1fr;
       grid-row-gap: 1rem;
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
 
       @include tablet-s {
         grid-template-columns: 1fr 3fr;
@@ -283,7 +283,6 @@ body {
         grid-column-gap: 2rem;
         grid-row-gap: 0;
         align-items: flex-start;
-        margin-bottom: 4rem;
       }
 
       @include tablet-l {
@@ -297,7 +296,7 @@ body {
         margin: 0 auto;
         width: 80%;
         align-self: center;
-        height: 16rem;
+        height: 100%;
         object-fit: cover;
         object-position: center top;
         -webkit-transition: filter 1s; /* Safari */
