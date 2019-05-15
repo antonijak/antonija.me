@@ -1,0 +1,31 @@
+<section class="projects__item">
+  <img src="{{.img}}" alt="{{.alt}}" class="projects__item__image" />
+  <div class="projects__item__content">
+    <h4 class="projects__item__content__title">{{.title}}</h4>
+    <span class="projects__item__content__technologies"
+      >{{.technologies}}
+    </span>
+    <p class="projects__item__content__text">
+      {{.text}}
+    </p>
+
+    <div class="projects__item__content__buttons">
+      <a
+        href="{{.github}}"
+        target="blank"
+        class="projects__item__content__buttons__github"
+      >
+        <img src="img/secondary-github.svg" class="github__icon" />
+        <span class="github__text">View on GitHub</span>
+        <span class="github__transition-color"></span>
+      </a>
+
+      <a
+        href="{{.link}}"
+        target="blank"
+        class="projects__item__content__buttons__demo"
+        >See Live</a
+      >
+    </div>
+  </div>
+</section>
