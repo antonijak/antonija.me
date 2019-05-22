@@ -1,51 +1,30 @@
-const headerText = document.querySelector(".main-header__text__profession");
+//set header text
 
-headerText.textContent="<Frontend developer />"
+const headerText = document.querySelector('.main-header__text__profession');
 
-const email = document.querySelector(".contact__text__email");
+headerText.textContent = '<Frontend developer />';
 
-email.addEventListener("mouseover", showCopyEmail);
+// Copy email to clipboard
 
-let bla;
-let bla2;
+const email = document.querySelector('.contact__text__email');
 
-function showCopyEmail () {
-    window.screen.width < 600 ? email.style.fontSize = '1.1rem': email.style.fontSize = '1.4rem';
-    email.textContent = "Copy email";
-    email.addEventListener("click", copyToClipboard);
-    email.addEventListener("mouseout", hideCopyEmail);
+function copyToClipboard() {
+	const contactText = document.querySelector('.contact__text');
+	const input = document.createElement('input');
+
+	contactText.appendChild(input);
+	input.setAttribute('class', 'contact__text__copy');
+	input.value = 'hello@antonijakasum.com';
+
+	input.select();
+	document.execCommand('copy');
+	email.setAttribute('class', 'copied');
+	contactText.removeChild(input);
+	email.addEventListener('mouseout', changeBack);
 }
 
-function hideCopyEmail () {
-
-    clearInterval(bla);
-    clearInterval(bla2);
-    email.textContent = "hello@antonijakasum.com";
-    email.style.background = "#FFECEC";
-    email.style.color = "#F55252";
+function changeBack() {
+	email.setAttribute('class', 'contact__text__email');
 }
 
-function copyToClipboard () {
-    const text = document.querySelector(".contact__text__copy")
-    text.select();
-    document.execCommand('copy');
-    email.textContent = "Email copied";
-    email.style.background = "#D8F4E7";
-    email.style.color = "#45C588";
-    email.style.fontSize = '1.4rem';
-
-    // email.style.transform = "scale(1.1, 1.1)"
-    // setTimeout(()=>{email.style.transform = "scale(1, 1)"}, 500);
-    // email.style.transform = "scale(1.1, 1.1)"
-    
-    
-    email.removeEventListener("click", copyToClipboard);
-       bla =  setInterval(function() {
-        email.style.fontSize = (email.style.fontSize === '1.4rem' ? '1.2rem' : '1.4rem');
-    }, 100);
-       bla2 = setInterval(function() {clearInterval(bla)
-        window.screen.width < 600 ? email.style.fontSize = '1.1rem': email.style.fontSize = '1.4rem';
-    }, 500);
-    
-}
-
+email.addEventListener('click', copyToClipboard);

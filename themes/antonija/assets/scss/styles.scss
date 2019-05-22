@@ -156,6 +156,27 @@ body {
         font-weight: 500;
         padding: 0.2rem;
         border-radius: 3px;
+        text-decoration: none;
+        position: relative;
+       
+        
+        &:hover {
+
+          &::after {
+            position: absolute;
+            content: "See video";
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: $link;
+            line-height: 1.7rem;
+
+            @include tablet-s {
+              line-height: 2.7rem;
+              border-radius: 3px;
+            }
+          }
+        }
       }
     }
 
@@ -553,13 +574,14 @@ body {
           font-family: $font-family-secondary;
           font-weight: 500;
           font-size: 1.1rem;
-          line-height: 1.5rem;
+          line-height: 1.8rem;
           padding: 0.1rem;
           width: 14rem;
           height: 1.8rem;
           border-radius: 3px;
           text-align: center;
           margin: 0.4rem auto 0;
+          position: relative;
           @include tablet-s {
             font-size: 1.4rem;
             line-height: 2.4rem;
@@ -569,6 +591,81 @@ body {
           }
           @include desktop-s {
             display: inline-block;
+          }
+
+          &:hover {
+            &::after {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              content: "Copy email";
+              background: #ffecec;
+              line-height: 1.8rem;
+              height: 1.8rem;
+
+              @include tablet-s {
+                line-height: 2.5rem;
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+
+        .copied {
+          display: block;
+          background: #D8F4E7;
+          color: #D8F4E7;
+          font-family: $font-family-secondary;
+          font-weight: 500;
+          font-size: 1.1rem;
+          line-height: 1.8rem;
+          padding: 0.1rem;
+          width: 14rem;
+          height: 1.8rem;
+          border-radius: 3px;
+          text-align: center;
+          margin: 0.4rem auto 0;
+          position: relative;
+          @include tablet-s {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            width: 18rem;
+            height: 2.5rem;
+            margin: 0;
+          }
+          @include desktop-s {
+            display: inline-block;
+          }
+         
+         
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 1.8rem;
+            height: 1.8rem;
+            content: "Email copied";
+            background: #D8F4E7;
+            color: rgb(56, 155, 107);
+            animation: pulse .2s 2;
+            @include tablet-s {
+              line-height: 2.5rem;
+              height: 2.5rem;
+            }
+          }
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1)
+          }
+          20%, 80% {
+            transform: scale(.9)
+          }
+          40%, 60% {
+            transform: scale(.8)
           }
         }
 
