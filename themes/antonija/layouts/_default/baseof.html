@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  {{ partial "head.html" . }}
+	{{ partial "head.html" . }}
 
-  <body>
-    {{ partial "header.html" . }}
-    {{- block "main" . }}{{ end }}
-    {{ partial "footer.html" . }}
+	<body>
+		{{ partial "modal.html" . }}
+		{{ partial "header.html" . }}
+		{{- block "main" . }}{{ end }}
+		{{ partial "footer.html" . }}
 
-    {{ $main := resources.Get "js/main.js" }}
-    {{ $js := slice $main | resources.Concat "js/bundle.js" }}
+		{{ $main := resources.Get "js/main.js" }}
+		{{ $js := slice $main | resources.Concat "js/bundle.js" }}
 
-    <script src="{{ $js.Permalink }}"></script>
-  </body>
+		<script src="{{ $js.Permalink }}"></script>
+	</body>
 </html>

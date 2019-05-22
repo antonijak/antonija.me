@@ -92,6 +92,28 @@ body {
   color: $primary;
   font-family: $font-family-primary;
 
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background: #000000af;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    &__video {
+      width: 100%;
+      height: 25rem;
+      @include tablet-l {
+        width: 60%;
+      }
+      @include desktop-s {
+        width: 45rem;
+      }
+    }
+  }
+
   .main-header {
     min-width: 300px;
     height: 100vh;
@@ -156,9 +178,15 @@ body {
         font-weight: 500;
         padding: 0.2rem;
         border-radius: 3px;
-        text-decoration: none;
         position: relative;
-       
+        border: none;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        outline: none;
+        @include tablet-s {
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+        }
         
         &:hover {
 
