@@ -113,7 +113,7 @@ body {
       }
     }
   }
-
+// --------------- HEADER START ---------------
   .main-header {
     min-width: 300px;
     height: 100vh;
@@ -164,8 +164,8 @@ body {
     &__text {
       width: 100%;
       text-align: center;
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.7rem;
       @include tablet-s {
         font-size: 1.5rem;
         line-height: 2.2rem;
@@ -180,8 +180,8 @@ body {
         border-radius: 3px;
         position: relative;
         border: none;
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.6rem;
         outline: none;
         @include tablet-s {
           font-size: 1.5rem;
@@ -209,14 +209,15 @@ body {
     }
 
     &__links {
-      margin-top: 1.5rem;
+      margin-top: 2.1rem;
       display: flex;
       justify-content: center;
-      @include tablet-s {
-        margin-top: 2.1rem;
-      }
+
       &__github {
-        margin-right: 1.4rem;
+        margin-right: 2.5rem;
+        @include tablet-s {
+          margin-top: 1.4rem;
+        }
       }
       &__linkedin {
         height: 2rem;
@@ -275,7 +276,10 @@ body {
       }
     }
   }
+// --------------- HEADER END ---------------
 
+
+// --------------- PROJECTS START ---------------
   .projects {
     margin: 0 auto;
     min-width: 300px;
@@ -342,7 +346,7 @@ body {
       }
 
       &__image {
-        margin: 0 auto 1rem;
+        margin: 0 auto;
         width: 90%;
         align-self: center;
         height: 100%;
@@ -378,8 +382,7 @@ body {
           font-size: 1.3rem;
           color: $title;
           font-family: $font-family-secondary;
-          margin-bottom: 0.3rem;
-
+          margin-bottom: 0.4rem;
           text-align: left;
 
           @include desktop-s {
@@ -390,11 +393,11 @@ body {
 
         &__technologies {
           color: $tech;
-          font-size: 0.9rem;
+          font-size: 1rem;
           list-style: none;
           margin-bottom: 1rem;
           line-height: 1.4rem;
-          text-align: center;
+          text-align: left;
           @include tablet-s {
             text-align: left;
             margin-bottom: 0.5rem;
@@ -406,9 +409,9 @@ body {
         }
 
         &__text {
-          font-size: 0.9rem;
+          font-size: 1rem;
           margin-bottom: 1rem;
-          line-height: 1.3rem;
+          line-height: 1.4rem;
           text-align: left;
           @include tablet-s {
             line-height: 1.4rem;
@@ -447,6 +450,7 @@ body {
             text-decoration: none;
             position: relative;
             margin-right: 1rem;
+            
 
             .github__transition-color {
               position: absolute;
@@ -474,7 +478,7 @@ body {
             .github__text {
               color: $secondary;
               letter-spacing: -0.3px;
-              font-size: 0.9rem;
+              font-size: 1rem;
               line-height: 1.2;
               z-index: 1;
               @include desktop-s {
@@ -493,7 +497,7 @@ body {
             color: $secondary;
             font-family: $font-family-primary;
             letter-spacing: -0.3px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             line-height: 1.2;
             text-decoration: none;
             @include desktop-s {
@@ -510,7 +514,7 @@ body {
               color: $secondary;
               font-family: $font-family-primary;
               letter-spacing: -0.5px;
-              font-size: 0.8rem;
+              font-size: 0.9rem;
               line-height: 1.2;
               @include desktop-s {
                 font-size: 1.1rem;
@@ -530,7 +534,9 @@ body {
       }
     }
   }
+// --------------- PROJECTS END ---------------
 
+// --------------- FOOTER START ---------------
   footer {
     width: 100%;
     padding-left: 1.3rem;
@@ -740,7 +746,7 @@ body {
       }
 
       &__text {
-        font-size: 0.8rem;
+        font-size: .9rem;
         padding: 0 1.3rem;
         @include tablet {
           font-size: 1rem;
@@ -816,7 +822,7 @@ body {
         }
 
         &__github {
-          margin-right: 2rem;
+          margin-right: 4rem;
           @include tablet-s {
             margin-right: 0.5rem;
           }
