@@ -91,6 +91,7 @@ html {
 body {
   color: $primary;
   font-family: $font-family-primary;
+  min-width: 300px;
 
   .modal {
     display: none;
@@ -115,10 +116,11 @@ body {
   }
 // --------------- HEADER START ---------------
   .main-header {
-    min-width: 300px;
     height: 100vh;
     min-height: 35rem;
-    padding: 15vh 1.3rem 0 1.3rem;
+    width: 90%;
+    padding-top: 15vh;
+    padding-bottom: 1.3rem;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -282,11 +284,13 @@ body {
 // --------------- PROJECTS START ---------------
   .projects {
     margin: 0 auto;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8vh 1.3rem 0 1.3rem;
+    padding-top: 8vh;
+    padding-bottom: 0;
+
+
     @include tablet-s {
       align-items: flex-start;
       width: 90%;
@@ -379,15 +383,14 @@ body {
           width: 100%;
         }
         &__title {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
           color: $title;
           font-family: $font-family-secondary;
-          margin-bottom: 0.4rem;
+          margin-bottom: 0.5rem;
           text-align: left;
 
           @include desktop-s {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
           }
         }
 
@@ -510,19 +513,23 @@ body {
               text-decoration: underline;
             }
 
-            &--disabled {
-              color: $secondary;
-              font-family: $font-family-primary;
-              letter-spacing: -0.5px;
-              font-size: 0.9rem;
-              line-height: 1.2;
-              @include desktop-s {
-                font-size: 1.1rem;
-              }
+            
+          }
 
-              &:hover {
-                text-decoration: none;
-              }
+          .disabled {
+            color: $secondary;
+            font-family: $font-family-primary;
+            letter-spacing: -0.5px;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            margin-right: 0;
+            padding-left: 0;
+            @include desktop-s {
+              font-size: 1.1rem;
+            }
+
+            &:hover {
+              text-decoration: none;
             }
           }
 
@@ -539,8 +546,6 @@ body {
 // --------------- FOOTER START ---------------
   footer {
     width: 100%;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
     margin-bottom: 2rem;
     @include tablet-s {
       margin-bottom: 0;
@@ -551,7 +556,7 @@ body {
     .contact {
       width: 100%;
       background: $footer;
-      padding: 0.8rem 0 1rem;
+      padding: 0.8rem 10% 1rem;
 
       @include tablet-s {
         padding: 2rem 0;
@@ -713,9 +718,9 @@ body {
     }
 
     .copyright {
-      width: 100%;
+      width: 90%;
       height: fit-content;
-      padding: 2rem 1.3rem;
+      padding: 2rem 0;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -824,7 +829,7 @@ body {
         &__github {
           margin-right: 4rem;
           @include tablet-s {
-            margin-right: 0.5rem;
+            margin-right: 1rem;
           }
         }
       }
