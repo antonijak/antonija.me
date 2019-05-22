@@ -214,11 +214,12 @@ body {
       margin-top: 2.1rem;
       display: flex;
       justify-content: center;
-    
 
       &__github {
         margin-right: 2.5rem;
-        
+        @include tablet-s {
+          margin-right: 1.4rem;
+        }
       }
       &__linkedin {
         height: 2rem;
