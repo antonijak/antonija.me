@@ -1,21 +1,19 @@
 <section class="projects__item">
-  <img src="{{.img}}" alt="{{.alt}}" class="projects__item__image" />
+  <a href="{{.link}}" target="blank" class="projects__item__image-link" style="
+    background-image: url({{.img}})"> </a>
+
   <div class="projects__item__content">
-    <h4 class="projects__item__content__title">{{.title}}</h4>
-    <span class="projects__item__content__technologies"
-      >{{.technologies}}
+    <h4 class="projects__item__content__title">
+      <a href="{{.link}}" class="projects__item__content__title__link" target="blank">{{.title}}</a>
+    </h4>
+    <span class="projects__item__content__technologies">{{.technologies}}
     </span>
     <p class="projects__item__content__text">
       {{.text}}
     </p>
 
     <div class="projects__item__content__buttons">
-      <a
-        href="{{.link}}"
-        target="blank"
-        class="projects__item__content__buttons__demo private-repo"
-        >See Live</a
-      >
+      <a href="{{.link}}" target="blank" class="projects__item__content__buttons__demo private-repo">See Live</a>
     </div>
   </div>
 </section>

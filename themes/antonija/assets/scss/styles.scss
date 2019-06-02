@@ -17,7 +17,10 @@
   src: url(/fonts/SpaceGrotesk-SemiBold.woff) format('woff');
 }
 
-$font-family-primary: Karla, Arial, Helvetica, sans-serif;
+$font-family-primary: Karla,
+Arial,
+Helvetica,
+sans-serif;
 $font-family-secondary: 'Space Grotesk';
 // ---------- media queries
 
@@ -77,6 +80,7 @@ $link: #ffecec;
 $title: #242c31;
 $tech: rgba(36, 44, 49, 0.42);
 $footer: #fbfbfb;
+
 // ---------- styles
 * {
   box-sizing: border-box;
@@ -106,15 +110,18 @@ body {
     &__video {
       width: 100%;
       height: 25rem;
+
       @include tablet-l {
         width: 60%;
       }
+
       @include desktop-s {
         width: 45rem;
       }
     }
   }
-// --------------- HEADER START ---------------
+
+  // --------------- HEADER START ---------------
   .main-header {
     height: 100vh;
     min-height: 35rem;
@@ -126,15 +133,19 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     align-content: space-between;
+
     @include phone-big {
       padding-top: 25vh;
     }
+
     @include tablet-s {
       width: 90%;
     }
+
     @include tablet {
       width: 80%;
     }
+
     @include tablet-l {
       padding-top: 30vh;
       width: 60%;
@@ -143,6 +154,7 @@ body {
     @include desktop-s {
       width: 70%;
     }
+
     @include desktop-m {
       max-width: 950px;
     }
@@ -153,14 +165,16 @@ body {
       font-size: 2.2rem;
       font-family: $font-family-secondary;
       font-weight: 500;
-      color: $title;
       margin-bottom: 1.5rem;
+
       @include tablet-s {
         font-size: 2.9rem;
       }
+
       @include desktop-s {
         font-size: 3rem;
       }
+
     }
 
     &__text {
@@ -168,10 +182,12 @@ body {
       text-align: center;
       font-size: 1.1rem;
       line-height: 1.7rem;
+
       @include tablet-s {
         font-size: 1.5rem;
         line-height: 2.2rem;
       }
+
       &__profession {
         display: inline-block;
         color: $secondary;
@@ -185,11 +201,12 @@ body {
         font-size: 1.1rem;
         line-height: 1.6rem;
         outline: none;
+
         @include tablet-s {
           font-size: 1.5rem;
           line-height: 2.2rem;
         }
-        
+
         &:hover {
 
           &::after {
@@ -217,13 +234,16 @@ body {
 
       &__github {
         margin-right: 2.5rem;
+
         @include tablet-s {
           margin-right: 1.4rem;
         }
       }
+
       &__linkedin {
         height: 2rem;
       }
+
       .fab {
         font-size: 2rem;
         color: $primary;
@@ -259,14 +279,17 @@ body {
         line-height: 1.4;
         border-radius: 3px;
         font-family: $font-family-secondary;
-        -webkit-transition: background-color 0.5s; /* Safari */
+        -webkit-transition: background-color 0.5s;
+        /* Safari */
         transition: background-color 0.5s;
         -webkit-transition-timing-function: ease;
         transition-timing-function: ease;
         margin-bottom: 3rem;
+
         @include tablet-s {
           margin-bottom: 0;
         }
+
         @include desktop-s {
           font-size: 1.1rem;
         }
@@ -278,10 +301,11 @@ body {
       }
     }
   }
-// --------------- HEADER END ---------------
+
+  // --------------- HEADER END ---------------
 
 
-// --------------- PROJECTS START ---------------
+  // --------------- PROJECTS START ---------------
   .projects {
     margin: 0 auto;
     display: flex;
@@ -296,16 +320,20 @@ body {
       width: 90%;
       margin-top: 10vh;
     }
+
     @include tablet {
       width: 80%;
     }
+
     @include tablet-l {
       width: 60%;
     }
+
     @include desktop-s {
       width: 70%;
       justify-content: space-between;
     }
+
     @include desktop-m {
       max-width: 950px;
     }
@@ -315,12 +343,15 @@ body {
       font-size: 2rem;
       color: $title;
       font-family: $font-family-secondary;
+
       @include tablet-s {
         margin-bottom: 2.5rem;
       }
+
       @include tablet-landscape {
         margin-bottom: 3rem;
       }
+
       @include desktop-s {
         margin-bottom: 3.5rem;
         font-size: 2.5rem;
@@ -345,32 +376,40 @@ body {
       @include tablet-l {
         margin-bottom: 5rem;
       }
+
       @include tablet-landscape {
         margin-bottom: 6rem;
+        width: 100%;
       }
 
-      &__image {
+      &__image-link {
+        display: block;
         margin: 0 auto;
         width: 90%;
-        align-self: center;
         height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        -webkit-transition: filter 1s; /* Safari */
+        background-position: center top;
+        background-size: cover;
+        -webkit-transition: filter 1s;
+        /* Safari */
         transition: filter 0.9s;
         box-shadow: 1px 2px 2px rgba(214, 214, 214, 0.5);
         filter: grayscale(100%);
         border-radius: 2px;
-        @include tablet-s {
-          margin: 0;
-          width: 100%;
-          height: 100%;
-        }
+        transition: transform .3s linear;
+
 
         &:hover {
           filter: none;
+          transform: scale(1.05);
+        }
+
+        @include tablet-s {
+          margin: 0;
+          height: 100%;
+          width: 100%;
         }
       }
+
 
       &__content {
         display: flex;
@@ -379,15 +418,32 @@ body {
         height: fit-content;
         width: 90%;
         margin: 0 auto;
+
         @include tablet-s {
           width: 100%;
         }
+
         &__title {
           font-size: 1.5rem;
           color: $title;
           font-family: $font-family-secondary;
           margin-bottom: 0.5rem;
           text-align: left;
+
+
+          &__link {
+            text-decoration: none;
+            color: $title;
+
+            &:hover {
+              transition: color .25s linear;
+              color: $secondary;
+            }
+
+            &:visited {
+              text-decoration: none;
+            }
+          }
 
           @include desktop-s {
             font-size: 1.5rem;
@@ -401,10 +457,12 @@ body {
           margin-bottom: 1rem;
           line-height: 1.4rem;
           text-align: left;
+
           @include tablet-s {
             text-align: left;
             margin-bottom: 0.5rem;
           }
+
           @include tablet-landscape {
             font-size: 1.1rem;
             line-height: 1.6rem;
@@ -416,9 +474,11 @@ body {
           margin-bottom: 1rem;
           line-height: 1.4rem;
           text-align: left;
+
           @include tablet-s {
             line-height: 1.4rem;
           }
+
           @include tablet-landscape {
             font-size: 1.1rem;
             line-height: 1.6rem;
@@ -438,6 +498,7 @@ body {
           display: flex;
           width: 100%;
           justify-content: space-between;
+
           @include tablet-s {
             justify-content: flex-start;
           }
@@ -453,7 +514,7 @@ body {
             text-decoration: none;
             position: relative;
             margin-right: 1rem;
-            
+
 
             .github__transition-color {
               position: absolute;
@@ -462,7 +523,8 @@ body {
               height: 100%;
               width: 0;
               background-color: $link;
-              -webkit-transition: width 0.1s; /* Safari */
+              -webkit-transition: width 0.1s;
+              /* Safari */
               transition: width 0.1s;
               -webkit-transition-timing-function: ease;
               transition-timing-function: ease;
@@ -484,6 +546,7 @@ body {
               font-size: 1rem;
               line-height: 1.2;
               z-index: 1;
+
               @include desktop-s {
                 font-size: 1.1rem;
               }
@@ -503,6 +566,7 @@ body {
             font-size: 1rem;
             line-height: 1.2;
             text-decoration: none;
+
             @include desktop-s {
               padding: 0.4rem 0.9rem;
               font-size: 1.1rem;
@@ -513,7 +577,7 @@ body {
               text-decoration: underline;
             }
 
-            
+
           }
 
           .disabled {
@@ -524,6 +588,7 @@ body {
             line-height: 1.2;
             margin-right: 0;
             padding-left: 0;
+
             @include desktop-s {
               font-size: 1.1rem;
             }
@@ -541,12 +606,14 @@ body {
       }
     }
   }
-// --------------- PROJECTS END ---------------
 
-// --------------- FOOTER START ---------------
+  // --------------- PROJECTS END ---------------
+
+  // --------------- FOOTER START ---------------
   footer {
     width: 100%;
     margin-bottom: 2rem;
+
     @include tablet-s {
       margin-bottom: 0;
       padding-left: 0;
@@ -561,6 +628,7 @@ body {
       @include tablet-s {
         padding: 2rem 0;
       }
+
       @include tablet {
         padding: 4rem 0;
       }
@@ -580,22 +648,27 @@ body {
           font-size: 1.2rem;
           line-height: 2rem;
         }
+
         @include tablet {
           width: 80%;
           font-size: 1.3rem;
           line-height: 2.3rem;
           height: 3rem;
         }
+
         @include tablet-l {
           width: 60%;
         }
+
         @include tablet-landscape {
           font-size: 1.5rem;
         }
+
         @include desktop-s {
           width: 70%;
           justify-content: space-between;
         }
+
         @include desktop-m {
           max-width: 950px;
         }
@@ -621,6 +694,7 @@ body {
           text-align: center;
           margin: 0.4rem auto 0;
           position: relative;
+
           @include tablet-s {
             font-size: 1.4rem;
             line-height: 2.4rem;
@@ -628,6 +702,7 @@ body {
             height: 2.5rem;
             margin: 0;
           }
+
           @include desktop-s {
             display: inline-block;
           }
@@ -666,6 +741,7 @@ body {
           text-align: center;
           margin: 0.4rem auto 0;
           position: relative;
+
           @include tablet-s {
             font-size: 1.4rem;
             line-height: 2.5rem;
@@ -673,11 +749,12 @@ body {
             height: 2.5rem;
             margin: 0;
           }
+
           @include desktop-s {
             display: inline-block;
           }
-         
-         
+
+
           &::after {
             position: absolute;
             bottom: 0;
@@ -689,6 +766,7 @@ body {
             background: #D8F4E7;
             color: rgb(56, 155, 107);
             animation: pulse .2s 2;
+
             @include tablet-s {
               line-height: 2.5rem;
               height: 2.5rem;
@@ -697,13 +775,19 @@ body {
         }
 
         @keyframes pulse {
-          0%, 100% {
+
+          0%,
+          100% {
             transform: scale(1)
           }
-          20%, 80% {
+
+          20%,
+          80% {
             transform: scale(.9)
           }
-          40%, 60% {
+
+          40%,
+          60% {
             transform: scale(.8)
           }
         }
@@ -729,15 +813,18 @@ body {
         flex-direction: row;
         justify-content: space-between;
       }
+
       @include tablet-s {
         padding: 3rem 0;
         align-items: flex-start;
         width: 90%;
       }
+
       @include tablet {
         width: 80%;
         padding: 4rem 0;
       }
+
       @include tablet-l {
         width: 60%;
       }
@@ -746,6 +833,7 @@ body {
         width: 70%;
         justify-content: space-between;
       }
+
       @include desktop-m {
         max-width: 950px;
       }
@@ -753,9 +841,11 @@ body {
       &__text {
         font-size: .9rem;
         padding: 0 1.3rem;
+
         @include tablet {
           font-size: 1rem;
         }
+
         @include tablet-s {
           display: flex;
           flex-wrap: wrap;
@@ -765,6 +855,7 @@ body {
         &__design,
         &__last {
           text-align: center;
+
           @include tablet-s {
             margin-right: 5px;
           }
@@ -809,6 +900,7 @@ body {
             transition: color 0.5s;
             -webkit-transition-timing-function: ease;
             transition-timing-function: ease;
+
             @include tablet-s {
               font-size: 1rem;
             }
@@ -820,6 +912,7 @@ body {
 
           .fa-linkedin {
             font-size: 1.6rem;
+
             @include tablet-s {
               font-size: 1.1rem;
             }
@@ -828,6 +921,7 @@ body {
 
         &__github {
           margin-right: 4rem;
+
           @include tablet-s {
             margin-right: 1rem;
           }
