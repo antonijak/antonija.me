@@ -207,23 +207,23 @@ body {
           line-height: 2.2rem;
         }
 
-        &:hover {
+        // &:hover {
 
-          &::after {
-            position: absolute;
-            content: "See video";
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: $link;
-            line-height: 1.7rem;
+        //   &::after {
+        //     position: absolute;
+        //     content: "See video";
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     background: $link;
+        //     line-height: 1.7rem;
 
-            @include tablet-s {
-              line-height: 2.7rem;
-              border-radius: 3px;
-            }
-          }
-        }
+        //     @include tablet-s {
+        //       line-height: 2.7rem;
+        //       border-radius: 3px;
+        //     }
+        //   }
+        //}
       }
     }
 
