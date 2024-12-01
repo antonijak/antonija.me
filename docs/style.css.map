@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.css",
-	"sourceRoot": "/Users/antonija/Documents/Code/antonijakasum.com",
+	"sourceRoot": "/Users/antonija/Documents/Code/antonija.me",
 	"sources": [
 		"themes/antonija/assets/scss/styles.scss"
 	],
