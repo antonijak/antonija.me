@@ -18,9 +18,9 @@
 }
 
 $font-family-primary: Karla,
-Arial,
-Helvetica,
-sans-serif;
+  Arial,
+  Helvetica,
+  sans-serif;
 $font-family-secondary: 'Space Grotesk';
 // ---------- media queries
 
@@ -601,6 +601,17 @@ body {
           .private-repo {
             padding: 0.4rem 0;
             margin-right: 0;
+          }
+
+          .archived {
+            padding: 0.4rem 0;
+            margin-right: 0;
+            color: $primary;
+
+
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
