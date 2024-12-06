@@ -16,7 +16,7 @@ function copyToClipboard() {
 
 	contactText.appendChild(input);
 	input.setAttribute('class', 'contact__text__copy');
-	input.value = 'hello@antonijakasum.com';
+	input.value = 'antonija.kasum@gmail.com';
 
 	input.select();
 	document.execCommand('copy');
