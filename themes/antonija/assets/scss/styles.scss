@@ -74,12 +74,24 @@ $font-family-secondary: 'Space Grotesk';
 
 // ---------- colors
 $primary: #454d52;
-$secondary: #f55252;
-$third: #ff8787;
+$secondary: #c63535;
+$third: #ce5555;
 $link: #ffecec;
 $title: #242c31;
 $tech: rgba(36, 44, 49, 0.42);
 $footer: #fbfbfb;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 // ---------- styles
 * {
@@ -152,12 +164,9 @@ body {
     }
 
     @include desktop-s {
-      width: 70%;
+      width: 800px;
     }
 
-    @include desktop-m {
-      max-width: 950px;
-    }
 
     &__title {
       width: 100%;
@@ -266,6 +275,7 @@ body {
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-top: 2rem;
       padding-bottom: 10vh;
 
       &__btn {
@@ -335,7 +345,7 @@ body {
     }
 
     @include desktop-m {
-      max-width: 950px;
+      max-width: 800px;
     }
 
     &__title {
@@ -681,7 +691,7 @@ body {
         }
 
         @include desktop-m {
-          max-width: 950px;
+          max-width: 800px;
         }
 
         &__words {
@@ -846,7 +856,7 @@ body {
       }
 
       @include desktop-m {
-        max-width: 950px;
+        max-width: 800px;
       }
 
       &__text {
