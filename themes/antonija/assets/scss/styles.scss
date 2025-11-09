@@ -393,13 +393,10 @@ body {
         width: 100%;
       }
 
-      &__image-link {
-        display: block;
+      &__image {
         margin: 0 auto;
         width: 90%;
         height: 100%;
-        background-position: center top;
-        background-size: cover;
         -webkit-transition: filter 1s;
         /* Safari */
         transition: filter 0.9s;
@@ -407,6 +404,8 @@ body {
         filter: grayscale(100%);
         border-radius: 2px;
         transition: transform .3s linear;
+        object-fit: cover;
+        object-position: top center;
 
 
         &:hover {
